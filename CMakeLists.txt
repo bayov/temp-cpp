@@ -7,10 +7,3 @@ add_library(fiddle src/fiddle/fiddle.cpp src/fiddle/fiddle.h)
 
 install(TARGETS fiddle ARCHIVE DESTINATION lib)
 install(DIRECTORY src/fiddle DESTINATION include FILES_MATCHING PATTERN "*.h")
-
-find_program(make mingw32-make.exe)
-add_custom_target(
-    install_fiddle
-    ${make} install DESTDIR=${CMAKE_BINARY_DIR}
-    COMMENT "${make} install"
-)
